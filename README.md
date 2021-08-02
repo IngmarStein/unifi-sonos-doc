@@ -43,4 +43,5 @@ Alternatively, you can change all your switches to use STP instead of RSTP, but 
 
 ### Community Threads
 - [Will Sonos S2 support RSTP or newer STP path costs?](https://en.community.sonos.com/advanced-setups-229000/will-sonos-s2-support-rstp-or-newer-stp-path-costs-6841084)
-- [Sonos and Unifi gear / VLANs - RSTP update](https://en.community.sonos.com/advanced-setups-229000/sonos-and-unifi-gear-vlans-rstp-update-6830571?postid=16364538#post16364538)
+- [Sonos and Unifi gear / VLANs - RSTP update](https://en.community.sonos.com/advanced-setups-229000/sonos-and-unifi-gear-vlans-rstp-update-6830571)
+- [UniFi, STP and Sonos](https://community.ui.com/questions/UniFi-STP-and-Sonos/7f72d9cf-6511-42f6-b6bc-d9b5efb7cb19)
