@@ -28,7 +28,7 @@ Use the following settings (as of Sonos OS S2 13.2, UniFi Network 6.4.47):
 - Auto-optimize network: _off_ (turning this setting on may block multicast traffic which is required for Sonos)
 - mDNS Reflector: _on_ (likely required only if Sonos devices are segregated into a separate VLAN)
 - IGMP Snooping: _on_ (helps reduce the multicast traffic from Sonos devices)
-- Multicast Enhancement (IGMPv3): _on_
+- Multicast Enhancement (IGMPv3): _off_ (turning this setting on prevents new HomeKit devices to be added in some scenarios)
 - Block LAN to WLAN multicast and broadcast data (Classic UI): _off_
 - Spanning Tree: _RSTP_
 - Port settings on the LAN ports that connect to Sonos gear: disable _Enable Spanning Tree Protocol_
@@ -47,3 +47,4 @@ Alternatively, you can change all your switches to use STP instead of RSTP, but 
 - [Sonos and Unifi gear / VLANs - RSTP update](https://en.community.sonos.com/advanced-setups-229000/sonos-and-unifi-gear-vlans-rstp-update-6830571)
 - [UniFi, STP and Sonos](https://community.ui.com/questions/UniFi-STP-and-Sonos/7f72d9cf-6511-42f6-b6bc-d9b5efb7cb19)
 - [Google Home speaker groups/Homekit/Sonos/Airprint/IoT/Multicast/mDNS issues?](https://community.ui.com/questions/Google-Home-speaker-groups-Homekit-Sonos-Airprint-IoT-Multicast-mDNS-issues/294320bd-be6d-4745-b74c-eba70f40958c)
+- [HomeKit Multicast issues across a wireless mesh link](https://community.ui.com/questions/HomeKit-Multicast-issues-across-a-wireless-mesh-link/106e0fca-b10a-42b5-9100-4848719e8b84)
