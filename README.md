@@ -29,6 +29,7 @@ Use the following settings (as of Sonos OS S2 13.2, UniFi Network 6.4.47):
 - mDNS Reflector: _on_ (likely required only if Sonos devices are segregated into a separate VLAN)
 - IGMP Snooping: _on_ (helps reduce the multicast traffic from Sonos devices)
 - Multicast Enhancement (IGMPv3): _on_
+- Multicast and Broadcast Control _off_ (as of UniFi Network Network 7.0.20)
 - Block LAN to WLAN multicast and broadcast data (Classic UI): _off_
 - Spanning Tree: _RSTP_
 - Port settings on the LAN ports that connect to Sonos gear: disable _Enable Spanning Tree Protocol_
