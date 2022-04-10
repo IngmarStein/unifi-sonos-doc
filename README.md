@@ -26,13 +26,22 @@ This becomes a problem when you operate both wired and wireless Sonos device in 
 Use the following settings (as of Sonos OS S2 13.2, UniFi Network Network 7.0.20):
 
 - Auto-optimize network: _off_ (turning this setting on may block multicast traffic which is required for Sonos)
+  - Settings -> Site (If available) 
 - mDNS Reflector: _on_ (likely required only if Sonos devices are segregated into a separate VLAN)
+  - Settings -> Networks -> `$YOUR_NETWORK`
 - IGMP Snooping: _on_ (helps reduce the multicast traffic from Sonos devices)
+  - Settings -> Networks -> `$YOUR_NETWORK`
 - Multicast Enhancement (IGMPv3): _on_
+  - Settings -> Wireless Networks -> `$YOUR_NETWORK`
 - Multicast and Broadcast Control: _off_
+  - Devices -> `$DEVICE` -> Ports -> `$AFFECTED_PORT`
 - Block LAN to WLAN multicast and broadcast data (Classic UI): _off_
+  - Settings -> Wireless Networks -> `$YOUR_NETWORK`
 - Spanning Tree: _RSTP_
+  - Devices -> `$DEVICE` -> Config -> Services -> Spanning tree
 - Port settings on the LAN ports that connect to Sonos gear: disable _Enable Spanning Tree Protocol_
+  - Devices -> `$DEVICE` -> Ports -> `$AFFECTED_PORT`
+
 
 Alternatively, you can change all your switches to use STP instead of RSTP, but this may make acquiring an IP over DHCP slow. If you do that, assign priority values manually: use priority 4096 for your main switch (going to your router/firewall) and add 4096 for each hop from there (e.g. 8192 for second-level switches, 12288 for third-layer switches). However, the [UDM and UDMP do not support STP](https://community.ui.com/questions/UDM-Pro-Ability-to-Toggle-from-RTSP-to-STP/45c8751b-2611-4e78-a779-6846b2dbb9a2).
 
