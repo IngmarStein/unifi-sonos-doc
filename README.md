@@ -42,8 +42,7 @@ Use the following settings (as of Sonos OS S2 13.2, UniFi Network Network 7.0.20
 - Port settings on the LAN ports that connect to Sonos gear: disable _Enable Spanning Tree Protocol_
   - Devices -> `$DEVICE` -> Ports -> `$AFFECTED_PORT`
 
-
-Alternatively, you can change all your switches to use STP instead of RSTP, but this may make acquiring an IP over DHCP slow. If you do that, assign priority values manually: use priority 4096 for your main switch (going to your router/firewall) and add 4096 for each hop from there (e.g. 8192 for second-level switches, 12288 for third-layer switches). However, the [UDM and UDMP do not support STP](https://community.ui.com/questions/UDM-Pro-Ability-to-Toggle-from-RTSP-to-STP/45c8751b-2611-4e78-a779-6846b2dbb9a2).
+Alternatively, you can change all your switches to use STP instead of RSTP, but this may make acquiring an IP over DHCP slow. If you do that, assign priority values manually: use priority 4096 for your main switch (going to your router/firewall) and add 4096 for each hop from there (e.g. 8192 for second-level switches, 12288 for third-layer switches). However, the [UDM, UDMP, and UDM-SE do not support STP](https://community.ui.com/questions/UDM-Pro-Ability-to-Toggle-from-RTSP-to-STP/45c8751b-2611-4e78-a779-6846b2dbb9a2). It can be temporarily enabled using `brctl setbridgeprio br0 4096; brctl stp br0 on`.
 
 ## References
 
@@ -58,3 +57,8 @@ Alternatively, you can change all your switches to use STP instead of RSTP, but 
 - [UniFi, STP and Sonos](https://community.ui.com/questions/UniFi-STP-and-Sonos/7f72d9cf-6511-42f6-b6bc-d9b5efb7cb19)
 - [Google Home speaker groups/Homekit/Sonos/Airprint/IoT/Multicast/mDNS issues?](https://community.ui.com/questions/Google-Home-speaker-groups-Homekit-Sonos-Airprint-IoT-Multicast-mDNS-issues/294320bd-be6d-4745-b74c-eba70f40958c)
 - [HomeKit Multicast issues across a wireless mesh link](https://community.ui.com/questions/HomeKit-Multicast-issues-across-a-wireless-mesh-link/106e0fca-b10a-42b5-9100-4848719e8b84)
+
+### Other
+
+- [Configure STP settings to work with Sonos](https://support.sonos.com/en-us/article/configure-stp-settings-to-work-with-sonos)
+- [Overcoming Sonos Issues with Araknis Networks Equipment](https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Networking/SupportDocuments/Sonos_TSB.pdf)
