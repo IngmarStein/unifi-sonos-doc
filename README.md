@@ -23,7 +23,7 @@ This becomes a problem when you operate both wired and wireless Sonos device in 
 
 ## Recommended Settings
 
-Use the following settings (as of Sonos OS S2 13.2, UniFi Network Network 7.4.156):
+Use the following settings (as of Sonos OS S2 13.2, UniFi Network Application 7.4.156):
 
 - Multicast DNS: _on_ (likely required only if Sonos devices are segregated into a separate VLAN)
   - Settings -> Networks -> `$YOUR_NETWORK`
