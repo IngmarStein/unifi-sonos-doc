@@ -23,7 +23,11 @@ This becomes a problem when you operate both wired and wireless Sonos device in 
 
 ## Recommended Settings
 
-Use the following settings (as of Sonos OS S2 13.2, UniFi Network Application 7.4.156):
+Ubiquiti has published best practices on https://help.ui.com/hc/en-us/articles/18930473041047-Best-Practices-for-Sonos-Devices. These are also linked to from the detail pages of Sonos devices in the Network application.
+
+The best practices are unfortunately quite restrictive and suggest that once there is a single wireless Sonos device on the network, no other Sonos device may be wired.
+
+You can use the following settings (as of Sonos OS S2 13.2, UniFi Network Application 7.4.156) to mix wired an wireless Sonos devices:
 
 - Multicast DNS: _on_ (likely required only if Sonos devices are segregated into a separate VLAN)
   - Settings -> Networks -> `$YOUR_NETWORK`
@@ -46,6 +50,7 @@ Alternatively, you can change all your switches to use STP instead of RSTP, but 
 ## References
 
 ### Official Documentation
+- [Best Practices for Sonos Devices](https://help.ui.com/hc/en-us/articles/18930473041047-Best-Practices-for-Sonos-Devices)
 - [Configure STP settings to work with Sonos](https://support.sonos.com/s/article/2118?language=en_US)
 - [UniFi - USW: Configuring Spanning Tree Protocol](https://help.ui.com/hc/en-us/articles/360006836773-UniFi-USW-Configuring-Spanning-Tree-Protocol)
 
