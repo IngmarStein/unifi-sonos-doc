@@ -27,25 +27,25 @@ Ubiquiti has published best practices on https://help.ui.com/hc/en-us/articles/1
 
 The best practices are unfortunately quite restrictive and suggest that once there is a single wireless Sonos device on the network, no other Sonos device may be wired.
 
-You can use the following settings (as of Sonos OS S2 13.2, UniFi Network Application 7.4.156) to mix wired an wireless Sonos devices:
+You can use the following settings (as of Sonos OS S2 13.2, UniFi Network Application 8.3.32) to mix wired an wireless Sonos devices:
 
-- Multicast DNS: _on_ (likely required only if Sonos devices are segregated into a separate VLAN)
-  - Settings -> Networks -> `$YOUR_NETWORK`
-- IGMP Snooping: _on_ (helps reduce the multicast traffic from Sonos devices)
-  - Settings -> Networks -> `$YOUR_NETWORK`
+- IoT Auto-Discovery (mDNS): _on_ (likely required only if Sonos devices are segregated into a separate VLAN)
+  - Settings -> Networks
+- Multicast Filtering (IGMP Snooping): _on_ (helps reduce the multicast traffic from Sonos devices)
+  - Settings -> Networks
 - Multicast Enhancement (IGMPv3): _on_
   - Settings -> Wireless Networks -> `$YOUR_NETWORK`
 - Multicast and Broadcast Control: _off_
-  - Devices -> `$DEVICE` -> Ports -> `$AFFECTED_PORT`
+  - Settings -> Wireless Networks -> `$YOUR_NETWORK`
 - Block LAN to WLAN multicast and broadcast data (Classic UI): _off_
   - Settings -> Wireless Networks -> `$YOUR_NETWORK`
 - Spanning Tree: _RSTP_
-  - Networks -> Global Switch Settings
-  - UniFi Devices -> `$DEVICE` -> Settings -> Advanced -> Spanning Tree
-- Port settings on the LAN ports that connect to Sonos gear: disable _Enable Spanning Tree Protocol_
-  - UniFi Devices -> `$DEVICE` -> Ports -> `$AFFECTED_PORT`
+  - Settings -> Networks -> Global Switch Settings
+  - UniFi Devices -> `$DEVICE` -> Settings -> Advanced -> Spanning Tree Protocol (for switches where Global Switch Settings is disabled)
+- Port settings on the LAN ports that connect to Sonos gear: disable _Spanning Tree Protocol_
+  - UniFi Devices -> `$DEVICE` -> Port Manager -> `$AFFECTED_PORT` -> Advanced
 
-Alternatively, you can change all your switches to use STP instead of RSTP, but this may make acquiring an IP over DHCP slow. If you do that, assign priority values manually: use priority 4096 for your main switch (going to your router/firewall) and add 4096 for each hop from there (e.g. 8192 for second-level switches, 12288 for third-layer switches). However, the [UDM, UDMP, and UDM-SE do not support STP](https://community.ui.com/questions/UDM-Pro-Ability-to-Toggle-from-RTSP-to-STP/45c8751b-2611-4e78-a779-6846b2dbb9a2). It can be temporarily enabled using `brctl setbridgeprio br0 4096; brctl stp br0 on`.
+Alternatively, you can change all your switches to use STP instead of RSTP, but this may make acquiring an IP over DHCP slow. If you do that, assign priority values manually: use priority 4096 for your main switch (going to your router/firewall) and add 4096 for each hop from there (e.g. 8192 for second-level switches, 12288 for third-layer switches). However, the [UDM, UDMP, UDM-SE, and UDM-Pro-Max do not support STP](https://community.ui.com/questions/UDM-Pro-Ability-to-Toggle-from-RTSP-to-STP/45c8751b-2611-4e78-a779-6846b2dbb9a2). It can be temporarily enabled using `brctl setbridgeprio br0 4096; brctl stp br0 on` (or just don't connect any wired Sonos devices to the internal switch of a UDM).
 
 ## References
 
