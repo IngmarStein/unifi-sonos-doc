@@ -37,8 +37,6 @@ You can use the following settings (as of Sonos OS S2 13.2, UniFi Network Applic
   - Settings -> Wireless Networks -> `$YOUR_NETWORK`
 - Multicast and Broadcast Control: _off_
   - Settings -> Wireless Networks -> `$YOUR_NETWORK`
-- Block LAN to WLAN multicast and broadcast data (Classic UI): _off_
-  - Settings -> Wireless Networks -> `$YOUR_NETWORK`
 - Spanning Tree: _RSTP_
   - Settings -> Networks -> Global Switch Settings
   - UniFi Devices -> `$DEVICE` -> Settings -> Advanced -> Spanning Tree Protocol (for switches where Global Switch Settings is disabled)
